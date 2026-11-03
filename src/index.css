@@ -1,0 +1,294 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0d0f17;
+  color: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.header {
+  background: #171a27;
+  border-bottom: 1px solid #2b3040;
+  padding: 22px 6%;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: #ff566c;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.header-stats {
+  display: flex;
+  gap: 20px;
+  color: #b8bbcb;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 35px 24px;
+}
+
+.hero {
+  background: linear-gradient(120deg, #28213f, #151b2d);
+  border: 1px solid #373047;
+  border-radius: 22px;
+  padding: 55px 40px;
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  color: #ff8595;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1.2;
+  margin: 16px 0;
+}
+
+.hero h1 span {
+  color: #ff6379;
+}
+
+.hero p, .form-card p {
+  color: #b8bbcb;
+  line-height: 1.6;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.form-card, .movie-card, .empty {
+  background: #191d2b;
+  border: 1px solid #303548;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.form-card h2, .catalog h2 {
+  margin-top: 0;
+}
+
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.form-card label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-card input, .form-card select {
+  width: 100%;
+  padding: 13px;
+  color: white;
+  background: #101421;
+  border: 1px solid #394052;
+  border-radius: 9px;
+  outline: none;
+}
+
+.form-card input:focus, .form-card select:focus {
+  border-color: #ff6379;
+}
+
+.btn-primary {
+  background: #ff566c;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 9px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  background: #e63f58;
+}
+
+.catalog {
+  min-width: 0;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.filter {
+  border: 1px solid #394052;
+  background: #191d2b;
+  color: #b8bbcb;
+  padding: 10px 16px;
+  border-radius: 25px;
+}
+
+.filter.active {
+  background: #ff566c;
+  color: white;
+  border-color: #ff566c;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.movie-type {
+  color: #ff8595;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.movie-card h3 {
+  margin: 12px 0 5px;
+  font-size: 21px;
+}
+
+.genre {
+  color: #aeb3c5;
+  margin: 0 0 20px;
+}
+
+.status {
+  display: inline-block;
+  align-self: flex-start;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.watched {
+  color: #72e6a5;
+  background: #173b30;
+}
+
+.pending {
+  color: #ffd18a;
+  background: #493622;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.card-actions button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #3b4255;
+}
+
+.btn-toggle {
+  flex: 1;
+  background: #30394e;
+  color: white;
+}
+
+.btn-delete {
+  background: #47232c;
+  color: #ff9ba8;
+}
+
+.empty {
+  text-align: center;
+  color: #b8bbcb;
+}
+
+footer {
+  text-align: center;
+  color: #9298ab;
+  padding: 35px 20px;
+}
+
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-content {
+    flex-direction: column;
+  }
+
+  .hero {
+    padding: 35px 25px;
+  }
+}
+.movie-card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  border-color: #ff6379;
+}
+
+/* Efeito visual nos botões */
+.btn-toggle:hover {
+  background: #43516e;
+}
+
+.btn-delete:hover {
+  background: #66303d;
+}
+
+/* Destaque para navegação por teclado */
+button:focus-visible {
+  outline: 2px solid #ff8595;
+  outline-offset: 3px;
+}
